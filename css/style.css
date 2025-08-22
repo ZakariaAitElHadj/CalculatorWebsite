@@ -1,83 +1,170 @@
-/* Global Styles */
+/* ---------------------- GLOBAL ---------------------- */
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6; /* light neutral background */
+    margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f3f4f6;
+    min-height: 100vh;
+    color: #111827;
 }
 
-main {
-    flex: 1;
-    padding: 2rem;
+a {
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-footer {
-    background-color: #1f2937;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
+/* ---------------------- HEADER ---------------------- */
 header {
-    background-color: #2563eb;
-    color: white;
-    padding: 1rem;
+    background-color: #1d4ed8; /* primary blue */
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-header nav a {
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+nav {
+    margin-top: 0.5rem;
+}
+
+nav a {
     margin: 0 0.5rem;
-    text-decoration: none;
-    color: white;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-button {
-    background-color: #2563eb;
-    color: white;
-    border: none;
     padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
+    background-color: #2563eb; /* slightly lighter blue for links */
+    border-radius: 8px;
+    font-weight: 600;
 }
 
-button:hover {
-    background-color: #1e40af;
-}
-
-input[type="number"] {
-    padding: 0.5rem;
-    width: 100%;
-    border: 1px solid #d1d5db;
-    border-radius: 0.25rem;
-}
-
-/* Calculator links list */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 0.5rem 0;
-}
-
-ul li a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-ul li a:hover {
-    background-color: #1e40af;
+nav a:hover {
+    background-color: #1e40af; /* dark blue hover */
     transform: translateY(-2px);
 }
 
+/* ---------------------- MAIN CONTENT ---------------------- */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---------------------- CALCULATOR LINKS / CARDS ---------------------- */
+ul.calculator-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+ul.calculator-list li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2563eb; /* primary card color */
+    color: white;
+    padding: 1.2rem;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+ul.calculator-list li a:hover {
+    background-color: #1e40af; /* darker blue on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* ---------------------- FORMS & INPUTS ---------------------- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 450px;
+    margin-top: 1rem;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+label {
+    font-weight: 600;
+}
+
+input, select {
+    padding: 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #1d4ed8; /* primary button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #2563eb; /* hover */
+    transform: translateY(-2px);
+}
+
+/* Result display */
+#result, #loanResult, #mortgageResult, #ageResult, #converterResult {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #10b981; /* green for results */
+    background-color: #ecfdf5; /* light green background */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+/* ---------------------- FOOTER ---------------------- */
+footer {
+    background-color: #1e3a8a; /* deep blue footer */
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+/* ---------------------- HEADINGS ---------------------- */
+h2 {
+    color: #1d4ed8; /* blue headings */
+    margin-bottom: 1rem;
+}
+
+/* ---------------------- RESPONSIVE ---------------------- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    ul.calculator-list {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    form {
+        max-width: 100%;
+        padding: 1rem;
+    }
+}
