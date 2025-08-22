@@ -152,6 +152,33 @@ h2 {
     color: #1d4ed8; /* blue headings */
     margin-bottom: 1rem;
 }
+/* ---------------------- CALCULATOR GRID ---------------------- */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.calculator-card a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2563eb;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.calculator-card a:hover {
+    background-color: #1e40af;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
 
 /* ---------------------- RESPONSIVE ---------------------- */
 @media (max-width: 768px) {
